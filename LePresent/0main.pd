@@ -1,0 +1,96 @@
+#N canvas 553 115 883 637 10;
+#X declare -path Fraise -stdpath Fraise;
+#X obj 22 237 analog/parse;
+#X floatatom 22 287 8 0 0 0 - - -, f 8;
+#X obj 22 207 fruit/receive fruit1;
+#X msg 780 315 L\$1;
+#X obj 780 292 tgl 15 0 empty empty set_LED 18 7 0 10 -4034 -1 -1 0
+1;
+#X obj 675 341 fruit/send2 fruit1;
+#X obj 21 38 pied/pied 0 41424;
+#X obj 21 16 declare -path Fraise -stdpath Fraise;
+#X text 78 283 current_sensing;
+#X msg 583 185 51 \$1;
+#X obj 795 213 hsl 128 15 0 1023 0 0 empty empty moteur -2 -8 0 10
+-262144 -1 -1 0 1;
+#X msg 792 234 60 \$1;
+#X msg 631 206 52 \$1;
+#X msg 675 227 53 \$1;
+#X msg 721 249 54 \$1;
+#X obj 19 141 fruit/fruit 1 fruit1 10 FW;
+#X msg 675 317 c \$1 i \$2;
+#X obj 583 48 vsl 15 128 0 1023 0 0 empty empty LED1 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 631 48 vsl 15 128 0 1023 0 0 empty empty LED2 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 675 48 vsl 15 128 0 1023 0 0 empty empty LED3 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 721 48 vsl 15 128 0 1023 0 0 empty empty LED4 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 83 309 route R;
+#X obj 83 331 unpack f f f f f, f 25;
+#X obj 83 355 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -4032
+-1 -1 1515 1;
+#X obj 119 355 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -260097
+-1 -1 4295 1;
+#X obj 156 355 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -260097
+-1 -1 1378 1;
+#X obj 193 355 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -260097
+-1 -1 7945 1;
+#X obj 230 355 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -260097
+-1 -1 4159 1;
+#X floatatom 83 500 5 0 0 0 - - -, f 5;
+#X floatatom 119 501 5 0 0 0 - - -, f 5;
+#X floatatom 156 502 5 0 0 0 - - -, f 5;
+#X floatatom 193 502 5 0 0 0 - - -, f 5;
+#X floatatom 230 502 5 0 0 0 - - -, f 5;
+#X obj 276 29 ramp/ramp fruit1 100 motor;
+#X obj 276 127 ramp/ramp fruit1 101 LED1;
+#X obj 276 220 ramp/ramp fruit1 102 LED2;
+#X obj 276 313 ramp/ramp fruit1 103 LED3;
+#X obj 276 406 ramp/ramp fruit1 104 LED4;
+#X msg 800 340 SAVE;
+#X obj 158 257 print;
+#X text 487 514 motor : 24V supply \; 2V ->16V : 85 ->682 = 85 + x*597
+;
+#X obj 22 262 route 0 1 2;
+#X floatatom 25 348 5 0 0 0 - - -, f 5;
+#X obj 23 527 t b b;
+#X obj 23 549 timer;
+#X floatatom 23 571 5 0 0 0 - - -, f 5;
+#X floatatom 33 371 5 0 0 0 - - -, f 5;
+#X connect 0 0 41 0;
+#X connect 2 0 0 0;
+#X connect 2 0 21 0;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 9 0 16 0;
+#X connect 10 0 11 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 16 0 5 0;
+#X connect 17 0 9 0;
+#X connect 18 0 12 0;
+#X connect 19 0 13 0;
+#X connect 20 0 14 0;
+#X connect 21 0 22 0;
+#X connect 21 0 43 0;
+#X connect 22 0 23 0;
+#X connect 22 1 24 0;
+#X connect 22 2 25 0;
+#X connect 22 3 26 0;
+#X connect 22 4 27 0;
+#X connect 23 0 28 0;
+#X connect 24 0 29 0;
+#X connect 25 0 30 0;
+#X connect 26 0 31 0;
+#X connect 27 0 32 0;
+#X connect 38 0 5 1;
+#X connect 41 0 1 0;
+#X connect 41 1 42 0;
+#X connect 41 2 46 0;
+#X connect 43 0 44 0;
+#X connect 43 1 44 1;
+#X connect 44 0 45 0;

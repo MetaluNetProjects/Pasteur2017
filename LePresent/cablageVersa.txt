@@ -1,0 +1,17 @@
+CCP1 : K9
+CCP2 : K10
+CCP3 : KB5 (MB2)
+CCP4 : INA2 (MB1)
+
+CCP5 : K4 ; moteur VNH1
+
+nappe leds:
+1 : gnd
+2 : vdd
+3 : CCP3-KB5
+4 : -----(KB4)
+5 : CCP2-K10
+6 : CCP1-K9
+7 : -----(ENA2)
+8 : CCP4-INA2
+
